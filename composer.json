@@ -1,0 +1,33 @@
+{
+    "name": "ctsolutionsk/magento2-plugin",
+    "type": "magento2-module",
+    "description": "Bitcoin and Altcoin Payment Gateway for Magento 2 via CryPay",
+    "version": "1.0.0",
+    "keywords": [
+      "crypay",
+      "bitcoin",
+      "merchant",
+      "magento",
+      "btc",
+      "ethereum",
+      "litecoin",
+      "eth",
+      "ltc",
+      "ripple",
+      "xrp",
+      "payment",
+      "altcoin",
+      "altcoins"
+    ],
+    "homepage": "https://crypay.com",
+    "license": "MIT",
+    "require": {
+        "ctsolutionsk/crypay-php": "1.0.*"
+    },
+    "autoload": {
+        "files": [ "registration.php" ],
+        "psr-4": {
+            "CryPay\\Merchant\\": ""
+        }
+    }
+}

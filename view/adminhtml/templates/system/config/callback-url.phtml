@@ -1,0 +1,9 @@
+<?php
+
+use Crypay\Merchant\Block\Adminhtml\System\Config\CallbackUrl;
+
+/** @var CallbackUrl $block */
+?>
+<div class="callback-url">
+    <input class="actions-test-email" type="text" id="<?= $block->getHtmlId() ?>" value="<?= $block->escapeHtml($block->getUrlCallback())?>" disabled>
+</div>

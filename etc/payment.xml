@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category    CryPay
+ * @package     CryPay_Merchant
+ * @author      CryPay
+ * @copyright   CryPay (https://crypay.com)
+ * @license     https://github.com/crypay/magento2-plugin/blob/master/LICENSE The MIT License (MIT)
+ */
+-->
+<payment xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Payment:etc/payment.xsd">
+    <methods>
+        <method name="crypay_merchant">
+            <allow_multiple_address>1</allow_multiple_address>
+        </method>
+    </methods>
+</payment>

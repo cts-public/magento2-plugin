@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category    CryPay
+ * @package     CryPay_Merchant
+ * @author      CryPay
+ * @copyright   CryPay (https://crypay.com)
+ * @license     https://github.com/crypay/magento2-plugin/blob/master/LICENSE The MIT License (MIT)
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="crypay_merchant_callback_send">
+        <observer name="create_invoice" instance="CryPay\Merchant\Observer\CreateInvoice" />
+    </event>
+</config>
