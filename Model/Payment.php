@@ -46,8 +46,7 @@ class Payment
      * @var array
      */
     private const STATUSES_FOR_CANSEL = [
-        'EXPIRED',
-        'CANCELED',
+        'EXPIRED'
     ];
 
     private UrlInterface $urlBuilder;
@@ -106,12 +105,8 @@ class Payment
         $payment->setAdditionalInformation(self::CRYPAY_ORDER_TOKEN_KEY, $token);
         $this->paymentRepository->save($payment);
 
-        foreach ($order->getAllItems() as $item) {
-            $description[] = number_format((float)$item->getQtyOrdered(), 0) . ' × ' . $item->getName();
-        }
-
         try {
-            $params = $this->getCryPayOrderParams($order, $description);
+            $params = $this->getCryPayOrderParams($order);
         } catch (LocalizedException $exception) {
             $this->logger->critical($exception->getMessage());
 
@@ -208,7 +203,7 @@ class Payment
      *
      * @throws LocalizedException
      */
-    private function getCryPayOrderParams(OrderInterface $order, array $description): array
+    private function getCryPayOrderParams(OrderInterface $order): array
     {
         $params = [
             'variableSymbol' => (string)$order->getIncrementId(),
