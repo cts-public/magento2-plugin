@@ -9,7 +9,7 @@ You can install Magento 2 CryPay plugin via [Composer](http://getcomposer.org/).
 2. Enter following commands to install plugin:
 
     ```bash
-    composer require ctsolutionsk/magento2-plugin
+    composer require cts-public/magento2-plugin
     ```
    Wait while dependencies are updated.
 
