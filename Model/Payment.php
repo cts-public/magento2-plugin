@@ -212,6 +212,7 @@ class Payment
             'currency' => $order->getOrderCurrencyCode(),
             'failUrl' => $this->urlBuilder->getUrl('crypay/payment/cancelOrder'),
             'successUrl' => $this->urlBuilder->getUrl('checkout/onepage/success'),
+            'timestamp' => time(),
         ];
 
         return $params;
