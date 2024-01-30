@@ -2,7 +2,7 @@
     "name": "cts-public/magento2-plugin",
     "type": "magento2-module",
     "description": "Bitcoin and Altcoin Payment Gateway for Magento 2 via CryPay",
-    "version": "1.0.1",
+    "version": "1.0.1.0",
     "keywords": [
       "crypay",
       "bitcoin",
