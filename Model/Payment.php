@@ -155,8 +155,8 @@ class Payment
                 $orderConfig = $order->getConfig();
                 $order->setStatus($orderConfig->getStateDefaultStatus(Order::STATE_PROCESSING));
                 $this->orderRepository->save($order);
-            } elseif (in_array($cgOrder->status, self::STATUSES_FOR_CANSEL)) {
-                $this->orderManagement->cancel($cgOrder->order_id);
+            } elseif (in_array($dataOrder->state, self::STATUSES_FOR_CANSEL)) {
+                $this->orderManagement->cancel($order->getId());
             }
         } catch (Exception $exception) {
             $this->logger->critical($exception);
@@ -213,6 +213,8 @@ class Payment
             'failUrl' => $this->urlBuilder->getUrl('crypay/payment/cancelOrder'),
             'successUrl' => $this->urlBuilder->getUrl('checkout/onepage/success'),
             'timestamp' => time(),
+            'name' => $order->getCustomerFirstname() . ' ' . $order->getCustomerLastname(),
+            'email' => $order->getCustomerEmail(),
         ];
 
         return $params;
